@@ -655,9 +655,7 @@ login(){
    <div style="margin-top:14px"><button class="gl">Forgot your PIN?</button></div>
    <button class="btn btn-primary" data-a="login" ${ok?"":"disabled"}>Log in</button>
    <div style="margin-top:16px"><button class="gl" data-a="startJoin">Not a member? Join now</button></div>
-   <div class="demo"><p>Prototype · returning members</p>
-     ${Object.entries(ACCOUNTS).map(([k,a])=>`<button data-acct="${k}"><b>${esc(a.label.split(" — ")[0])}</b>${esc(a.label.split(" — ")[1])}</button>`).join("")}
-   </div></div>`};
+   </div>`};
 },
 gym(){
   const q=S.gymQuery.trim().toLowerCase();
