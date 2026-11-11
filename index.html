@@ -391,6 +391,10 @@ main.gp .hs[data-hs=cls]{margin-top:36px}
 .welcome .pair2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
 .welcome .btn-out{background:#fff;color:var(--energy);border:3px solid var(--energy)}
 .welcome .btn-out:hover{background:#eef3ff}
+.btn[aria-disabled="true"]{cursor:default}
+.welcome .btn-login[aria-disabled="true"]:hover{background:var(--energy)}
+.welcome .btn-out[aria-disabled="true"]:hover{background:#fff}
+.login .btn-join[aria-disabled="true"]:hover{background:#112d8c}
 .login .back{color:#fff}
 .login .btn-join{background:#112d8c;color:var(--green);border:3px solid var(--green);margin-top:12px}
 .login .btn-join:hover{background:var(--navy)}
@@ -678,8 +682,8 @@ welcome(){
    <div class="wl-track" aria-roledescription="carousel" aria-label="App highlights">${sl}</div>
    <div class="wbody">
     <div class="wl-dots">${dots}</div>
-    <button class="btn btn-login" data-a="toLogin">Log in</button>
-    <div class="pair2"><button class="btn btn-out" data-a="startJoin">Join</button><button class="btn btn-out" data-a="toLogin">Rejoin</button></div>
+    <button class="btn btn-login" aria-disabled="true">Log in</button>
+    <div class="pair2"><button class="btn btn-out" aria-disabled="true">Join</button><button class="btn btn-out" data-a="toLogin">Rejoin</button></div>
    </div></div>`};
 },
 login(){
@@ -690,7 +694,7 @@ login(){
    <div class="field"><label for="lp">PIN</label><div class="input-ic trail-only"><input class="input" id="lp" type="password" inputmode="numeric" placeholder="Enter PIN" value="${esc(S.login.pin)}" data-bind="login.pin"><span class="trail" style="pointer-events:none"><span style="width:24px;height:24px;display:block">${I.eye}</span></span></div></div>
    <div style="margin-top:14px"><button class="gl">Forgot your PIN?</button></div>
    <button class="btn btn-primary" data-a="login" ${ok?"":"disabled"}>Log in</button>
-   <button class="btn btn-join" data-a="startJoin">Join now</button>
+   <button class="btn btn-join" aria-disabled="true">Join now</button>
    </div>`};
 },
 gym(){
