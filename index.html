@@ -31,6 +31,8 @@ a{color:inherit}
 /* top nav */
 .nav{background:var(--energy);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 16px 0 20px;flex:none}
 .nav .logo{height:40px;display:block}
+.home-logo{background:none;border:0;padding:0;margin:0;cursor:pointer;display:block;border-radius:8px}
+.home-logo:focus-visible{outline:3px solid var(--green);outline-offset:4px}
 .nav .links{display:flex;gap:18px}
 .nav .links span{display:flex;flex-direction:column;align-items:center;color:#fff;font-size:12px;font-weight:700;gap:2px}
 .nav .links svg{width:22px;height:22px}
@@ -563,7 +565,7 @@ function pricing(){
 // ================= components =================
 const img = (k,alt="",cls="") => `<img src="${A[k]}" alt="${esc(alt)}" class="${cls}">`;
 function nav(){
-  return `<header class="nav">${img("logo","The Gym Group","logo")}
+  return `<header class="nav"><button class="home-logo" data-a="home" aria-label="The Gym Group, back to start">${img("logo","","logo")}</button>
   <div class="links"><span>${I.pin}Gyms</span><span>${I.user}Account</span><span>${I.menu}Menu</span></div></header>`;
 }
 function header(step){
@@ -683,7 +685,7 @@ welcome(){
 login(){
   const ok = S.login.email && S.login.pin;
   return {id:"App · Log in", html:`<div class="login">${backBtn()}
-   <div class="lg">${img("logo","The Gym Group")}</div>
+   <div class="lg"><button class="home-logo" data-a="home" aria-label="The Gym Group, back to start">${img("logo","")}</button></div>
    <div class="field"><label for="le">Email address</label><input class="input" id="le" type="email" placeholder="Enter your email address" value="${esc(S.login.email)}" data-bind="login.email"></div>
    <div class="field"><label for="lp">PIN</label><div class="input-ic trail-only"><input class="input" id="lp" type="password" inputmode="numeric" placeholder="Enter PIN" value="${esc(S.login.pin)}" data-bind="login.pin"><span class="trail" style="pointer-events:none"><span style="width:24px;height:24px;display:block">${I.eye}</span></span></div></div>
    <div style="margin-top:14px"><button class="gl">Forgot your PIN?</button></div>
@@ -935,6 +937,7 @@ function loginAs(k){
 const ACT = {
   back(){ const h=S.hist.pop(); if(h){ S.screen=h.screen; S.returnTo=h.returnTo; S.errors={}; S.payErr=false; scrollTop(); } },
   restart(){ reset(); },
+  home(){ reset(); scrollTop(); },
   toLogin(){ go("login"); },
   startJoin(){ const from=S.screen; reset(); S.mode="join"; go("gym",{push:true}); S.hist=[{screen:from}]; },
   login(){ const k=Object.keys(ACCOUNTS).find(k=>ACCOUNTS[k].email===S.login.email.trim().toLowerCase())||"dave"; loginAs(k); S.hist=[{screen:"login"}]; },
