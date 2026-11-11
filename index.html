@@ -370,6 +370,10 @@ main.gp .hs[data-hs=cls]{margin-top:36px}
 .login .gl{color:var(--green);text-decoration:underline;font-weight:600;background:none;border:0;padding:0;cursor:pointer;font-size:15px}
 .login .btn-primary{background:#fff;color:var(--energy)}
 .login .btn-primary:disabled{background:var(--n200);color:var(--n800)}
+.login .join-cta{margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.3);text-align:center}
+.login .join-cta p{margin:0;font-size:15px;font-weight:600}
+.login .btn-join{background:var(--green);color:var(--navy);margin-top:12px}
+.login .btn-join:hover{background:#c8ff4d}
 .demo{margin-top:22px;border-top:1px solid rgba(255,255,255,.3);padding-top:14px}
 .demo p{font-size:12px;opacity:.85;margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em;font-weight:800}
 .demo button{display:block;width:100%;text-align:left;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:12px;color:#fff;padding:10px 12px;margin-bottom:8px;cursor:pointer;font-size:14px}
@@ -654,7 +658,7 @@ login(){
    <div class="field"><label for="lp">PIN</label><div class="input-ic trail-only"><input class="input" id="lp" type="password" inputmode="numeric" placeholder="Enter PIN" value="${esc(S.login.pin)}" data-bind="login.pin"><span class="trail" style="pointer-events:none"><span style="width:24px;height:24px;display:block">${I.eye}</span></span></div></div>
    <div style="margin-top:14px"><button class="gl">Forgot your PIN?</button></div>
    <button class="btn btn-primary" data-a="login" ${ok?"":"disabled"}>Log in</button>
-   <div style="margin-top:16px"><button class="gl" data-a="startJoin">Not a member? Join now</button></div>
+   <div class="join-cta"><p>Not a member yet?</p><button class="btn btn-join" data-a="startJoin">Join now</button></div>
    </div>`};
 },
 gym(){
