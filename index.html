@@ -363,12 +363,13 @@ main.gp .hs[data-hs=cls]{margin-top:36px}
 
 /* login */
 .login{background:var(--energy);flex:1;display:flex;flex-direction:column;padding:24px 20px 28px;color:#fff}
-.login .lg{display:flex;justify-content:center;margin:80px 0 70px}
+.login .lg{display:flex;justify-content:center;align-items:center;flex:1;min-height:220px;margin:0 0 24px}
 .login .lg img{width:200px}
 .login label{color:#fff;font-weight:500}
 .login .input{border-color:var(--n800)}
 .login .gl{color:var(--green);text-decoration:underline;font-weight:600;background:none;border:0;padding:0;cursor:pointer;font-size:15px}
-.login .btn-primary{background:#fff;color:var(--energy)}
+.login .btn-primary{background:var(--green);color:var(--navy)}
+.login .btn-primary:not(:disabled):hover{background:#c8ff4d}
 .login .btn-primary:disabled{background:var(--n200);color:var(--n800)}
 .welcome{flex:1;display:flex;flex-direction:column;background:#fff}
 .welcome .wl-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-behavior:smooth}
@@ -389,7 +390,7 @@ main.gp .hs[data-hs=cls]{margin-top:36px}
 .welcome .btn-out{background:#fff;color:var(--energy);border:3px solid var(--energy)}
 .welcome .btn-out:hover{background:#eef3ff}
 .login .back{color:#fff}
-.login .btn-join{background:#112d8c;color:var(--green);border:3px solid var(--green)}
+.login .btn-join{background:#112d8c;color:var(--green);border:3px solid var(--green);margin-top:12px}
 .login .btn-join:hover{background:var(--navy)}
 .demo{margin-top:22px;border-top:1px solid rgba(255,255,255,.3);padding-top:14px}
 .demo p{font-size:12px;opacity:.85;margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em;font-weight:800}
